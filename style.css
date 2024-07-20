@@ -1,0 +1,82 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('vi4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: rgb(243, 142, 142);
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 0; /* Remove the gap to rely on borders for spacing */
+    padding: 0; /* Remove padding if needed */
+    background-color: transparent; /* Make the background color transparent */
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent; /* Make the cells' background color transparent */
+    font-size: 28px;
+    color: white; /* Make cross or circle white */
+    cursor: pointer;
+    border: 2px solid rgb(238, 238, 243); /* Add a blue border to each cell */
+    box-shadow: 2px 2px 5px rgba(0, 0, 255, 0.5); /* Add a shadow to the border */
+    box-sizing: border-box; /* Ensure the border is included in the element's total width and height */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.cell:hover {
+    border-color: darkblue; /* Change border color on hover */
+    box-shadow: 8px 8px 30px rgba(0, 0, 255, 0.8); /* Enhance shadow on hover */
+}
+
+.cell:nth-child(-n+3) {
+    border-top: none; /* Remove top border from the first row */
+}
+
+.cell:nth-child(3n+1) {
+    border-left: none; /* Remove left border from the first column */
+}
+
+.cell:nth-child(3n) {
+    border-right: none; /* Remove right border from the last column */
+}
+
+.cell:nth-last-child(-n+3) {
+    border-bottom: none; /* Remove bottom border from the last row */
+}
+
+#reset-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: white; /* Background color of the button */
+    color: black; /* Text color of the button */
+    border: 2px solid black; /* Border of the button */
+    border-radius: 5px; /* Rounded corners of the button */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow for a 3D effect */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#reset-button:hover {
+    background-color: black; /* Background color on hover */
+    color: white; /* Text color on hover */
+}
